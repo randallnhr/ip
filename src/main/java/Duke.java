@@ -20,7 +20,7 @@ public class Duke {
                 int curr = 1;
                 Iterator<Task> iter = lst.iterator();
                 while (iter.hasNext()) {
-                    System.out.println(curr + " " + iter.next());
+                    System.out.println(curr + ". " + iter.next());
                     curr++;
                 }
                 word = br.readLine().split(" ");
@@ -35,8 +35,12 @@ public class Duke {
                 System.out.println("Task has been marked as not done:\n " + t);
                 word = br.readLine().split(" ");
             } else {
-                System.out.println("Added task: " + word[0]);
-                lst.add(new Task(word[0]));
+                String s = "";
+                for (int i = 0; i < word.length; i++) {
+                    s = s + " " + word[i];
+                }
+                System.out.println("Added task: " + s);
+                lst.add(new Task(s));
                 word = br.readLine().split(" ");
             }
         }
